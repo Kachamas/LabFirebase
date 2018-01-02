@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "366515283920",
+    "firebase_url": "https://project402-a5db3.firebaseio.com",
+    "project_id": "project402-a5db3",
+    "storage_bucket": "project402-a5db3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366515283920:android:4b4fa5cbf5d58810",
+        "android_client_info": {
+          "package_name": "com.example.kacha.helloworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366515283920-4pvd1a4qs3hnn0linhqovqkuiibqmg0c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk4NKrDdLJfCVV5eEXhdAvnD6AvmWHmFs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
