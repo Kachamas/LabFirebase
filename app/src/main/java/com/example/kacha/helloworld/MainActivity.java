@@ -1,10 +1,14 @@
 package com.example.kacha.helloworld;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,6 +18,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.setTitle("Realtime Database");
 
         init();
 
@@ -79,8 +90,6 @@ public class MainActivity extends AppCompatActivity {
                 mesMessage.removeValue();
             }
         });
-
-
     }
 
     private void init() {
@@ -96,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         mValueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -131,5 +141,27 @@ public class MainActivity extends AppCompatActivity {
         if (mValueEventListener != null) {
             mesRoot.removeEventListener(mValueEventListener);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.realTimeDTB:
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+                return true;
+            case R.id.login:
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                return true;
+            default:
+
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }
